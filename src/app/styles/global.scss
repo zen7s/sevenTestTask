@@ -1,0 +1,14 @@
+@import './palette.scss';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: white;
+}
+
+.page {
+  flex: 1;
+  padding: 10px;
+  background: $mainBg;
+}

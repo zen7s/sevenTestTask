@@ -1,0 +1,16 @@
+@import 'src/app/styles/palette.scss';
+
+.addBtn {
+  border: 1px solid $border;
+  border-radius: 8px;
+  padding: 5px 10px;
+  margin-top: 15px;
+  background: $layoutBg;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: lighten($layoutBg, 10%);
+  }
+}

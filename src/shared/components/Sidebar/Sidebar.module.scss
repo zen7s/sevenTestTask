@@ -1,0 +1,8 @@
+@import '../../../app/styles/palette.scss';
+
+.sidebar {
+  background: $layoutBg;
+  width: 200px;
+  height: 100%;
+  border-right: 1px solid $border;
+}

@@ -1,0 +1,12 @@
+@import 'src/app/styles/palette.scss';
+
+.item {
+  padding: 8px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.active {
+  background: $font;
+}

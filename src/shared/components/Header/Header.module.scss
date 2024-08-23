@@ -1,0 +1,27 @@
+@import '../../../app/styles/palette.scss';
+
+.header {
+  background: $layoutBg;
+  padding: 0 23px;
+  height: 44px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  color: $font;
+}
+
+.nav {
+  display: flex;
+  gap: 27px;
+}
+
+.buttons {
+  display: flex;
+  height: 100%;
+  gap: 24px;
+
+  .btn {
+    padding: 0 4px;
+  }
+}

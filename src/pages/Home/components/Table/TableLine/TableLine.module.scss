@@ -1,0 +1,33 @@
+@import 'src/app/styles/palette.scss';
+
+.line {
+  display: grid;
+  grid-template-columns: 10% 30% 15% 15% 15% 15%;
+  border-bottom: 1px solid $border;
+  align-items: center;
+
+  padding: 11px 12px;
+}
+
+.iconButtons {
+  display: flex;
+  align-items: center;
+}
+
+.addIcon {
+  color: rgb(120, 144, 178);
+}
+
+.deleteIcon {
+  color: rgb(223, 68, 68);
+}
+
+.input {
+  margin-left: 10px;
+  padding: 5px;
+  width: 100px;
+}
+
+.cell {
+  padding: 0 5px;
+}

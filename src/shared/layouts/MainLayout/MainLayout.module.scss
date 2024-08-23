@@ -1,0 +1,31 @@
+@import 'src/app/styles/palette.scss';
+
+.mainLayout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.breadcrumbs {
+  padding: 12px 15px;
+  font-size: 18px;
+  border-right: 1px solid $border;
+}
+
+.box {
+  display: flex;
+  background: $layoutBg;
+  border: 1px solid $border;
+}

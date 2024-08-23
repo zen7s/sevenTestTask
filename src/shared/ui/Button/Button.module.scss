@@ -1,0 +1,19 @@
+@import '/src/app/styles/palette.scss';
+
+.btn {
+  font-size: inherit;
+  height: 100%;
+  cursor: pointer;
+  color: $font;
+  border: none;
+  background-color: inherit;
+
+  &:hover {
+    color: white;
+  }
+
+  &--active {
+    color: white;
+    border-bottom: 2px solid white;
+  }
+}
