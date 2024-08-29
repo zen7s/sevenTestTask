@@ -6,13 +6,13 @@
   border-bottom: 1px solid $border;
   align-items: center;
 
-  padding: 11px 12px;
+  padding: 16px 9px;
 }
 
-.iconButtons {
-  display: flex;
-  align-items: center;
-}
+// .iconButtons {
+//   display: flex;
+//   align-items: center;
+// }
 
 .addIcon {
   color: rgb(120, 144, 178);
@@ -30,4 +30,47 @@
 
 .cell {
   padding: 0 5px;
+}
+
+.iconContainer {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding: 3px 7px;
+  transition: opacity 0.3s ease;
+
+  &[class*='level-'] {
+    // &:before {
+    //   content: '';
+    //   top: -50px;
+    //   left: -7px;
+    //   height: 65px;
+    //   border: 1px solid white;
+    //   position: absolute;
+    // }
+
+    // &::after {
+    //   content: '';
+    //   top: 15px;
+    //   left: -7px;
+    //   width: 17px;
+    //   border: 1px solid white;
+    //   position: absolute;
+    // }
+  }
+}
+
+.deleteButton {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.iconContainer:hover .deleteButton,
+.addButton:hover ~ .deleteButton {
+  opacity: 1;
+}
+
+.iconContainer:hover {
+  background-color: $border;
+  border-radius: 6px;
 }

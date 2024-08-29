@@ -11,9 +11,9 @@
   &:hover {
     color: white;
   }
+}
 
-  &--active {
-    color: white;
-    border-bottom: 2px solid white;
-  }
+.active {
+  color: white;
+  border-bottom: 2px solid white;
 }

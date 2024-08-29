@@ -14,3 +14,59 @@
     background: lighten($layoutBg, 10%);
   }
 }
+
+// li {
+//   position: relative;
+
+//   &:before {
+//     content: '';
+//     top: 50px;
+//     left: 27px;
+//     height: 65px;
+//     border: 1px solid white;
+//     position: absolute;
+//   }
+
+//   &::after {
+//     content: '';
+//     top: 100px;
+//     left: 27px;
+//     width: 17px;
+//     border: 1px solid white;
+//     position: absolute;
+//   }
+// }
+
+// ul {
+// text-indent: 0.5em;
+// border-left: 0.25em solid white;
+
+// &:before {
+//   content: '';
+//   top: 50px;
+//   left: 27px;
+//   height: 5em;
+//   border: 1px solid white;
+//   position: absolute;
+// }
+// }
+
+// ul ul {
+//   margin-top: -1.25em;
+//   margin-left: 1em;
+// }
+
+// li {
+//   position: relative;
+//   bottom: -1.25em;
+// }
+
+// li:before {
+//   content: '';
+//   display: inline-block;
+//   width: 2em;
+//   height: 0;
+//   position: relative;
+//   left: -1.75em;
+//   border-top: 0.25em solid gray;
+// }

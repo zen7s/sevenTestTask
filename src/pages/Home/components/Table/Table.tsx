@@ -24,45 +24,45 @@ const Table: React.FC = () => {
     handleDelete,
   } = useTable()
 
-  const renderLines = (items: TableItem[], level = 0): React.ReactElement[] => {
-    return items.flatMap((item) => {
-      const result: React.ReactElement[] = [
-        <TableLine
-          key={item.id}
-          lineData={{ ...item, level }}
-          onAddChild={handleAddChild}
-          onDelete={handleDelete}
-          onDoubleClick={handleDoubleClick}
-          onCancelEdit={handleCancelEdit}
-          isEditing={editingItemId === item.id}
-          onInputChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-          editingValues={editingItemId === item.id ? editingValues : null}
-        />,
-      ]
+  const renderLines = (items: TableItem[], level = 0): React.ReactElement => {
+    return (
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>
+            <TableLine
+              lineData={{ ...item, level }}
+              onAddChild={handleAddChild}
+              onDelete={handleDelete}
+              onDoubleClick={handleDoubleClick}
+              onCancelEdit={handleCancelEdit}
+              isEditing={editingItemId === item.id}
+              onInputChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+              editingValues={editingItemId === item.id ? editingValues : null}
+            />
+            {item.child && item.child.length > 0 && renderLines(item.child, level + 1)}
 
-      if (item.child && item.child.length > 0) {
-        result.push(...renderLines(item.child, level + 1))
-      }
-
-      if (isAdding && editingValues?.parentId === item.id) {
-        result.push(
-          <TableLine
-            key={`new-${item.id}`}
-            lineData={{ ...editingValues, level: level + 1 } as TableItem}
-            onAddChild={() => {}}
-            onDelete={() => {}}
-            onDoubleClick={() => {}}
-            onCancelEdit={handleCancelEdit}
-            isEditing={true}
-            onInputChange={handleInputChange}
-            onKeyDown={handleKeyDown}
-            editingValues={editingValues}
-          />
-        )
-      }
-      return result
-    })
+            {isAdding && editingValues?.parentId === item.id && (
+              <ul className={`styles.${level + 1}`}>
+                <li key={`new-${item.id}`}>
+                  <TableLine
+                    lineData={{ ...editingValues, level: level + 1 } as TableItem}
+                    onAddChild={() => {}}
+                    onDelete={() => {}}
+                    onDoubleClick={() => {}}
+                    onCancelEdit={handleCancelEdit}
+                    isEditing={true}
+                    onInputChange={handleInputChange}
+                    onKeyDown={handleKeyDown}
+                    editingValues={editingValues}
+                  />
+                </li>
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    )
   }
 
   if (isLoading) return <div>Loading...</div>
@@ -97,18 +97,21 @@ const Table: React.FC = () => {
         </Button>
       )}
       {isAdding && editingValues?.parentId === null && (
-        <TableLine
-          key={`new-root`}
-          lineData={{ ...editingValues, level: 0 } as TableItem}
-          onAddChild={() => {}}
-          onDelete={() => {}}
-          onDoubleClick={() => {}}
-          onCancelEdit={handleCancelEdit}
-          isEditing={true}
-          onInputChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-          editingValues={editingValues}
-        />
+        <ul>
+          <li key={`new-root`}>
+            <TableLine
+              lineData={{ ...editingValues, level: 0 } as TableItem}
+              onAddChild={() => {}}
+              onDelete={() => {}}
+              onDoubleClick={() => {}}
+              onCancelEdit={handleCancelEdit}
+              isEditing={true}
+              onInputChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+              editingValues={editingValues}
+            />
+          </li>
+        </ul>
       )}
     </div>
   )
